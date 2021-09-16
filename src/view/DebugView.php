@@ -26,6 +26,6 @@ class DebugView extends View {
 		$error = ob_get_contents();
 		ob_end_clean();
 		
-		parent::renderPage("<p>GLOBALS :</p>$dump<p>ERROR :</p>$error");
+		parent::renderView("<p>GLOBALS :</p>$dump<p>ERROR :</p>$error");
 	}
 }

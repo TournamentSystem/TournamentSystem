@@ -14,16 +14,16 @@
 #tournament_list .card {
   width: 75%; }
 
-#player .card, #coach .card {
+#player .card, #coach .card, #admin_login .card {
   width: 75%; }
-  #player .card .card-body form input, #coach .card .card-body form input {
+  #player .card .card-body form input, #coach .card .card-body form input, #admin_login .card .card-body form input {
     border: none;
     border-bottom: thin solid var(--bs-gray-700);
     outline: none;
     background: none; }
-    #player .card .card-body form input:disabled, #coach .card .card-body form input:disabled {
+    #player .card .card-body form input:disabled, #coach .card .card-body form input:disabled, #admin_login .card .card-body form input:disabled {
       border-bottom-color: var(--bs-gray-500); }
-    #player .card .card-body form input:focus, #coach .card .card-body form input:focus {
+    #player .card .card-body form input:focus, #coach .card .card-body form input:focus, #admin_login .card .card-body form input:focus {
       border-bottom-color: var(--bs-primary); }
 
 /*# sourceMappingURL=tournament_system.css.map */

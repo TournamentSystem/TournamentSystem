@@ -7,16 +7,28 @@
 	RewriteCond %{REQUEST_URI} ^/favicon\.ico$
 	RewriteRule ^ - [L]
 
+	# Player
 	RewriteRule ^player/(\d+)/?$ index.php?type=player&id=$1 [L]
 
+	# Coach
 	RewriteRule ^coach/(\d+)/?$ index.php?type=coach&id=$1 [L]
 
+	# Club
 	RewriteRule ^club/(\d+)/?$ index.php?type=club&id=$1 [L]
+	# Club Player
 	RewriteRule ^club/(\d+)/player/(\d+)/?$ index.php?type=player&id=$2&club=$1 [L]
+	# Team
 	RewriteRule ^club/(\d+)/(?:team/)?(\d+)/?$ index.php?type=team&id=$2&club=$1 [L]
+	# Team Player
 	RewriteRule ^club/(\d+)/(?:team/)?(\d+)/(?:player/)?(\d+)/?$ index.php?type=player&id=$3&team=$2&club=$1 [L]
 
+	# Admin
+	RewriteRule ^(admin/)?login/?$ index.php?type=admin&action=login [L]
+	RewriteRule ^admin/dashboard/?$ index.php?type=admin&action=dashboard [L]
+
+	# Tournament
 	RewriteRule ^(\w+)/?$ index.php?type=tournament&id=$1 [L]
 
+	# Other
 	RewriteRule ^(.*)$ index.php?type=none&page=$1 [L]
 </IfModule>

@@ -14,7 +14,7 @@ class TournamentView extends View {
 	}
 	
 	public function render(): void {
-		parent::renderPage(parent::$latte->renderToString('templates/tournament.latte', [
+		parent::renderView(parent::$latte->renderToString('templates/tournament.latte', [
 			'tournament' => $this->tournament
 		]));
 	}

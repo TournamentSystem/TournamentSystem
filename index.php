@@ -27,6 +27,11 @@ if($CONFIG->general->debug) {
 	}
 }
 
+session_set_cookie_params([
+	'httponly' => true,
+	'samesite' => 'strict'
+]);
+
 $page = null;
 if(!array_key_exists('type', $_REQUEST)) {
 	$tournaments = [];
@@ -125,6 +130,52 @@ if(!array_key_exists('type', $_REQUEST)) {
 				}
 				
 				$result->free();
+			}
+			break;
+		
+		case 'admin':
+			switch($_REQUEST['action']) {
+				case 'login':
+					$invalidData = false;
+					
+					if($_SERVER['REQUEST_METHOD'] === 'POST') {
+						$username = $_REQUEST['username'];
+						
+						$stmt = $DB->prepare('SELECT password FROM tournament_user WHERE name=?');
+						$stmt->bind_param('s', $username);
+						$stmt->execute();
+						
+						if($result = $stmt->get_result()) {
+							if($hash = $result->fetch_row()) {
+								$hash = $hash[0];
+								
+								if(password_verify($_REQUEST['password'], $hash)) {
+									$result->free();
+									
+									session_start();
+									$_SESSION['user'] = $username;
+									
+									header('Location: /admin/dashboard/', true, 303);
+									die();
+								}else {
+									$invalidData = true;
+								}
+							}
+							
+							$result->free();
+						}
+					}
+					
+					$page = new \view\admin\LoginView($invalidData);
+					break;
+				case 'dashboard':
+					if(!isset($_COOKIE['PHPSESSID'])) {
+						header('WWW-Authenticate: Cookie realm="TournamentSystem" form-action="/admin/login/" cookie-name="' . session_name() . '"', true, 401);
+						$page = new \view\admin\LoginView();
+					}else {
+						session_start();
+					}
+					break;
 			}
 			break;
 	}

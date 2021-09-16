@@ -18,7 +18,7 @@ abstract class View {
 		$this->type = $type;
 	}
 	
-	protected function renderPage(string $body): void {
+	protected final function renderView(?string $body = ''): void {
 		self::$latte->render('templates/base.latte', [
 			'bootstrap_style' => self::$config->bootstrap->style,
 			'bootstrap_script' => self::$config->bootstrap->script,
@@ -43,6 +43,7 @@ abstract class View {
 		return "<img src='$logo' alt='Logo'/>";
 	}
 }
+
 
 View::$latte = new Engine();
 View::$latte->addFilter('time', fn($time, $format = null) => Filters::date($time, $format ?? $GLOBALS['CONFIG']->general->time_format));

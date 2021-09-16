@@ -1,0 +1,19 @@
+{var int $labelCol = 2}
+{var int $col = 6}
+
+<div class="card mx-auto">
+	<div class="card-body">
+		<p class="card-title">Login</p>
+		<form class="card-text" method="post">
+			<div class="form-group form-row">
+				<label class="col-{$labelCol} col-form-label" for="username">Username</label>
+				<input id="username" class="col-{$col}" type="text" name="username"/>
+			</div>
+			<div class="form-group form-row">
+				<label class="col-{$labelCol} col-form-label" for="password">Password</label>
+				<input id="password" class="col-{$col}" type="password" name="password"/>
+			</div>
+			<button class="form-row btn btn-primary mt-4" type="submit">Login</button>
+		</form>
+	</div>
+</div>
