@@ -27,24 +27,6 @@ if($CONFIG->general->debug) {
 	}
 }
 
-class TestView extends \view\View {
-	
-	public function __construct() {
-		parent::__construct('Test View', 'test_page');
-	}
-	
-	public function render(): void {
-		parent::renderPage(var_export([
-			'_GET' => $_GET,
-			'_POST' => $_POST,
-			'_COOKIE' => $_COOKIE,
-			'_FILES' => $_FILES,
-			'_REQUEST' => $_REQUEST,
-			'_SERVER' => $_SERVER,
-		], true));
-	}
-}
-
 $page = null;
 if(!array_key_exists('type', $_REQUEST)) {
 	$tournaments = [];
@@ -61,10 +43,9 @@ if(!array_key_exists('type', $_REQUEST)) {
 			));
 		}
 		
+		$page = new \view\TournamentListView($tournaments, $_REQUEST['year'] ?? null);
 		$result->free();
 	}
-	
-	$page = new \view\TournamentListView($tournaments, $_REQUEST['year'] ?? null);
 }else {
 	switch($_REQUEST['type']) {
 		case 'player':
@@ -83,6 +64,8 @@ if(!array_key_exists('type', $_REQUEST)) {
 					
 					$page = new \view\PlayerView($player);
 				}
+				
+				$result->free();
 			}
 			break;
 		case 'coach':
@@ -101,6 +84,8 @@ if(!array_key_exists('type', $_REQUEST)) {
 					
 					$page = new \view\CoachView($coach);
 				}
+				
+				$result->free();
 			}
 			break;
 		case 'club':
@@ -117,6 +102,8 @@ if(!array_key_exists('type', $_REQUEST)) {
 					
 					$page = new \view\ClubView($club);
 				}
+				
+				$result->free();
 			}
 			break;
 		case 'tournament':
@@ -136,12 +123,14 @@ if(!array_key_exists('type', $_REQUEST)) {
 					
 					$page = new \view\TournamentView($tournament);
 				}
+				
+				$result->free();
 			}
 			break;
 	}
 }
 
 if(!$page) {
-	$page = new TestView();
+	$page = new \view\DebugView();
 }
 $page->render();
