@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteCond %{REQUEST_URI} ^/$             [OR]
+	RewriteCond %{REQUEST_URI} ^/index\.php$   [OR]
+	RewriteCond %{REQUEST_URI} ^/resources     [OR]
+	RewriteCond %{REQUEST_URI} ^/favicon\.ico$
+	RewriteRule ^ - [L]
+
+	RewriteRule ^player/(\d+)/?$ index.php?type=player&id=$1 [L]
+
+	RewriteRule ^coach/(\d+)/?$ index.php?type=coach&id=$1 [L]
+
+	RewriteRule ^club/(\d+)/?$ index.php?type=club&id=$1 [L]
+	RewriteRule ^club/(\d+)/player/(\d+)/?$ index.php?type=player&id=$2&club=$1 [L]
+	RewriteRule ^club/(\d+)/(?:team/)?(\d+)/?$ index.php?type=team&id=$2&club=$1 [L]
+	RewriteRule ^club/(\d+)/(?:team/)?(\d+)/(?:player/)?(\d+)/?$ index.php?type=player&id=$3&team=$2&club=$1 [L]
+
+	RewriteRule ^(\w+)/?$ index.php?type=tournament&id=$1 [L]
+
+	RewriteRule ^(.*)$ index.php?type=none&page=$1 [L]
+</IfModule>

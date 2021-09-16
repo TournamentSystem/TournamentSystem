@@ -1,0 +1,21 @@
+{
+	"name": "neo-hornberger/tournament_system",
+	"type": "project",
+	"authors": [
+		{
+			"name": "Neo Hornberger",
+			"email": "neo.hornberger@gmx.de"
+		}
+	],
+	"require": {
+		"php": "^7.4",
+		"ext-mysqli": "*",
+		"latte/latte": "^2.10",
+		"twbs/bootstrap": "^5.1"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	}
+}

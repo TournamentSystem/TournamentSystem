@@ -1,2 +1,7 @@
 .idea/
 
+/vendor/
+
+config.ini
+database_user.txt
+test_database.sql

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>{$title}</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/resources/css/tournament_system.css" rel="stylesheet"/>
+
+	<!-- Bootstrap -->
+	<link href="{$bootstrap_style}" rel="stylesheet" integrity="" crossorigin="anonymous"/>
+	<script src="{$bootstrap_script}" rel="stylesheet" integrity="" crossorigin="anonymous"></script>
+
+	{$head}
+</head>
+<body>
+	<header class="navbar navbar-dark bg-primary">
+		<div class="container-xxl">
+			<a href="/" class="navbar-brand py-1">{$logo|noescape}</a>
+			<span class="navbar-text mx-auto my-1 fs-4 text-light">{$title}</span>
+		</div>
+	</header>
+	<main id="{$type}" class="container-lg py-4">
+		{$body|noescape}
+	</main>
+	<footer></footer>
+
+	{if $_SERVER['REQUEST_METHOD'] == 'POST'}
+		<script>
+			if(window.history.replaceState) {
+				window.history.replaceState(null, null, window.location.href);
+			}
+		</script>
+	{/if}
+</body>
+</html>

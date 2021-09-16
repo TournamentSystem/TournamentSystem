@@ -1,0 +1,44 @@
+{var string[] $years = array_keys($tournaments)}
+{var int $MAX_ITEMS = 3}
+
+<nav>
+	<ul class="pagination justify-content-end">
+		{foreach array_slice($years, 0, $MAX_ITEMS) as $y}
+			<li class="page-item{if $y == $year} active{/if}">
+				<form id="year-{$y}" method="post">
+					<input type="hidden" name="year" value="{$y}"/>
+				</form>
+				<button class="page-link" form="year-{$y}">{$y}</button>
+			</li>
+		{/foreach}
+		{if count($years) > $MAX_ITEMS}
+			<li class="page-item dropdown">
+				<button id="dropdown-more_years" class="page-link dropdown-toggle" data-bs-toggle="dropdown"
+						aria-expanded="false">
+					More
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdown-more_years">
+					{foreach array_slice($years, $MAX_ITEMS) as $y}
+						<li>
+							<form id="year-{$y}" method="post">
+								<input type="hidden" name="year" value="{$y}"/>
+							</form>
+							<button class="btn-link dropdown-item{if $y == $year} active{/if}"
+									form="year-{$y}">{$y}</button>
+						</li>
+					{/foreach}
+				</ul>
+			</li>
+		{/if}
+	</ul>
+</nav>
+
+{foreach $tournaments[$year] as $tournament}
+	<div class="card mx-auto my-2">
+		<div class="card-body">
+			<a href="{$tournament->getId()}/" class="card-title">{$tournament->getName()}</a>
+			<p class="card-subtitle">{$tournament->getStart()|datetime} - {$tournament->getEnd()|datetime}</p>
+			<p class="card-text">Hello World!</p>
+		</div>
+	</div>
+{/foreach}

@@ -1,0 +1,29 @@
+.navbar .navbar-text {
+  color: var(--bs-light) !important; }
+
+.card-title {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+.card-subtitle {
+  margin-bottom: .5rem !important;
+  color: var(--bs-gray-700); }
+
+#tournament_list .card {
+  width: 75%; }
+
+#player .card, #coach .card {
+  width: 75%; }
+  #player .card .card-body form input, #coach .card .card-body form input {
+    border: none;
+    border-bottom: thin solid var(--bs-gray-700);
+    outline: none;
+    background: none; }
+    #player .card .card-body form input:disabled, #coach .card .card-body form input:disabled {
+      border-bottom-color: var(--bs-gray-500); }
+    #player .card .card-body form input:focus, #coach .card .card-body form input:focus {
+      border-bottom-color: var(--bs-primary); }
+
+/*# sourceMappingURL=tournament_system.css.map */

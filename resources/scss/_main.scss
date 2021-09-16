@@ -1,0 +1,41 @@
+.card-title {
+	margin-top: 0;
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.2;
+}
+
+.card-subtitle {
+	margin-bottom: .5rem !important;
+	color: var(--bs-gray-700);
+}
+
+
+$card-width: 75%;
+
+#tournament_list {
+	.card {
+		width: $card-width;
+	}
+}
+
+#player, #coach {
+	.card {
+		width: $card-width;
+
+		.card-body form input {
+			border: none;
+			border-bottom: thin solid var(--bs-gray-700);
+			outline: none;
+			background: none;
+
+			&:disabled {
+				border-bottom-color: var(--bs-gray-500);
+			}
+
+			&:focus {
+				border-bottom-color: var(--bs-primary);
+			}
+		}
+	}
+}
