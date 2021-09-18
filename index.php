@@ -28,11 +28,6 @@ if($CONFIG->general->debug) {
 	}
 }
 
-session_set_cookie_params([
-	'httponly' => true,
-	'samesite' => 'strict'
-]);
-
 $controller = null;
 if(!array_key_exists('type', $_REQUEST)) {
 	$controller = new \controller\TournamentListController();

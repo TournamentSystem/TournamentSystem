@@ -12,13 +12,17 @@ class LoginController extends Controller {
 	}
 	
 	protected function get(): int {
+		if(session_exists()) {
+			return parent::SEE_OTHER('/admin/dashboard/');
+		}
+		
 		parent::render(new LoginView());
 		
 		return parent::OK;
 	}
 	
 	protected function post(): int {
-		$username = $_REQUEST['username'];
+		$username = $_POST['username'];
 		
 		$this->stmt->bind_param('s', $username);
 		$this->stmt->execute();
@@ -27,14 +31,13 @@ class LoginController extends Controller {
 			if($hash = $result->fetch_row()) {
 				$hash = $hash[0];
 				
-				if(password_verify($_REQUEST['password'], $hash)) {
+				if(password_verify($_POST['password'], $hash)) {
 					$result->free();
 					
 					session_start();
 					$_SESSION['user'] = $username;
 					
-					header('Location: /admin/dashboard/');
-					return parent::SEE_OTHER;
+					return parent::SEE_OTHER('/admin/dashboard/');
 				}
 			}
 			

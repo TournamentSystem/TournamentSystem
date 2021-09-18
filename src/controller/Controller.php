@@ -65,6 +65,18 @@ abstract class Controller {
 		$methodFunc = strtolower($methodFunc);
 		http_response_code($this->$methodFunc());
 	}
+	
+	protected final function SEE_OTHER(string $loc): int {
+		header("Location: $loc");
+		return self::SEE_OTHER;
+	}
+	
+	protected final function UNAUTHORIZED(): int {
+		print('<script>window.location.replace("/admin/login/")</script>');
+		
+		header('WWW-Authenticate: Cookie realm="TournamentSystem" form-action="/admin/login/" cookie-name="' . session_name() . '"');
+		return self::UNAUTHORIZED;
+	}
 }
 
 
