@@ -31,6 +31,13 @@ abstract class View {
 		]);
 	}
 	
+	/**
+	 * @param object|array $params
+	 */
+	protected final function template(string $name, $params = []): string {
+		return self::$latte->renderToString("templates/$name", $params);
+	}
+	
 	public abstract function render(): void;
 	
 	private function getLogo(): string {

@@ -14,7 +14,7 @@ class PlayerView extends PersonView {
 	}
 	
 	public function render(): void {
-		parent::renderPerson($this->player, parent::$latte->renderToString('templates/player.latte', [
+		parent::renderPerson($this->player, parent::template('templates/player.latte', [
 			'player' => $this->player
 		]));
 	}

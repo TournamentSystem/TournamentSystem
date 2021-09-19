@@ -3,6 +3,7 @@
 namespace controller\admin;
 
 use controller\Controller;
+use view\admin\DashboardView;
 
 class DashboardController extends Controller {
 	
@@ -16,6 +17,8 @@ class DashboardController extends Controller {
 		}
 		
 		session_start();
+		
+		parent::render(new DashboardView());
 		
 		return parent::OK;
 	}

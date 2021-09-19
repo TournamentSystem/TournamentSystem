@@ -14,7 +14,7 @@ class LoginView extends View {
 	}
 	
 	public function render(): void {
-		parent::renderView(parent::$latte->renderToString('templates/admin/login.latte', [
+		parent::renderView(parent::template('templates/admin/login.latte', [
 			'invalidData' => $this->invalidData
 		]));
 	}

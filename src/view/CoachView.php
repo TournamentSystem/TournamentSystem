@@ -14,7 +14,7 @@ class CoachView extends PersonView {
 	}
 	
 	public function render(): void {
-		parent::renderPerson($this->coach, parent::$latte->renderToString('templates/coach.latte', [
+		parent::renderPerson($this->coach, parent::template('templates/coach.latte', [
 			'coach' => $this->coach
 		]));
 	}
