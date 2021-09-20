@@ -43,7 +43,7 @@ class TournamentListView extends View {
 	}
 	
 	public function render(): void {
-		parent::renderView(parent::template('templates/tournament_list.latte', [
+		parent::renderView(parent::template('tournament_list.latte', [
 			'tournaments' => $this->tournaments,
 			'year' => $this->year
 		]));

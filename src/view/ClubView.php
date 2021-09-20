@@ -14,7 +14,7 @@ class ClubView extends View {
 	}
 	
 	public function render(): void {
-		parent::renderView(parent::template('templates/club.latte', [
+		parent::renderView(parent::template('club.latte', [
 			'club' => $this->club
 		]));
 	}
