@@ -4,7 +4,6 @@ namespace config;
 
 class Config {
 	public GeneralConfig $general;
-	public BootstrapConfig $bootstrap;
 	public DatabaseConfig $database;
 	
 	public function __construct(string $filename) {
@@ -14,10 +13,7 @@ class Config {
 		self::set($config, 'General', 'debug', $this->general->debug);
 		self::set($config, 'General', 'logo', $this->general->logo);
 		self::set($config, 'General', 'time_format', $this->general->time_format);
-		
-		$this->bootstrap = new BootstrapConfig();
-		self::set($config, 'Bootstrap', 'style', $this->bootstrap->style);
-		self::set($config, 'Bootstrap', 'script', $this->bootstrap->script);
+		self::set($config, 'General', 'date_format', $this->general->date_format);
 		
 		$this->database = new DatabaseConfig();
 		self::set($config, 'Database', 'hostname', $this->database->hostname);

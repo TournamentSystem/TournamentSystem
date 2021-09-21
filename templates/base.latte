@@ -5,11 +5,17 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/resources/css/tournament_system.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="/resources/css/tournament_system.css" integrity="" crossorigin="anonymous"/>
 
 	<!-- Bootstrap -->
-	<link href="{$bootstrap_style}" rel="stylesheet" integrity="" crossorigin="anonymous"/>
-	<script src="{$bootstrap_script}" rel="stylesheet" integrity="" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+		  integrity="sha256-sAcc18zvMnaJZrNT4v8J0T4HqzEUiUTlVFgDIywjQek=" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha256-5aErhPlUPVujIxg3wvJGdWNAWqZqWCtvxACYX4XfSa0=" crossorigin="anonymous"></script>
+
+	{if $_SERVER['REQUEST_METHOD'] == 'POST'}
+		<script src="/resources/js/post-method-replace-state.js" integrity="" crossorigin="anonymous"></script>
+	{/if}
 
 	{$head}
 </head>
@@ -24,13 +30,5 @@
 		{$body|noescape}
 	</main>
 	<footer></footer>
-
-	{if $_SERVER['REQUEST_METHOD'] == 'POST'}
-		<script>
-			if(window.history.replaceState) {
-				window.history.replaceState(null, null, window.location.href);
-			}
-		</script>
-	{/if}
 </body>
 </html>

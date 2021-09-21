@@ -72,7 +72,8 @@ abstract class Controller {
 	}
 	
 	protected final function UNAUTHORIZED(): int {
-		print('<script>window.location.replace("/admin/login/")</script>');
+		print('<meta http-equiv="refresh" content="0;URL=/admin/login/"/>');
+		print('<script src="/resources/js/redirect-to-login.js" integrity="" crossorigin="anonymous"></script>');
 		
 		header('WWW-Authenticate: Cookie realm="TournamentSystem" form-action="/admin/login/" cookie-name="' . session_name() . '"');
 		return self::UNAUTHORIZED;

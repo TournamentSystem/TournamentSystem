@@ -20,9 +20,6 @@ abstract class View {
 	
 	protected final function renderView(?string $body = ''): void {
 		self::$latte->render('templates/base.latte', [
-			'bootstrap_style' => self::$config->bootstrap->style,
-			'bootstrap_script' => self::$config->bootstrap->script,
-			
 			'title' => $this->title,
 			'head' => '',
 			'logo' => $this->getLogo(),
