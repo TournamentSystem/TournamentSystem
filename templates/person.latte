@@ -7,7 +7,7 @@
 		<form class="card-text" autocomplete="off">
 			<div class="form-group form-row">
 				<label class="col-{$labelCol} col-form-label" for="firstname">Firstname</label>
-				<input id="firstname" class="col-{$labelCol}" type="text" name="firstname"
+				<input id="firstname" class="col-{$col}" type="text" name="firstname"
 					   value="{$person->getFirstname()}" disabled>
 			</div>
 			<div class="form-group from-row">
@@ -19,6 +19,16 @@
 				<label class="col-{$labelCol} col-form-label" for="birthday">Birthday</label>
 				<input id="birthday" class="col-{$col}" type="date" name="birthday"
 					   value="{$person->getBirthday()|date:Y-m-d}" disabled>
+			</div>
+			<div class="form-group from-row">
+				{var int $gender = $person->getGender()}
+				<label class="col-{$labelCol} col-form-label" for="gender">Gender</label>
+				<select id="gender" class="col-{$col}" name="gender" disabled>
+					<option value="0"{if $gender == 0} selected{/if}>Unknown</option>
+					<option value="1"{if $gender == 1} selected{/if}>Male</option>
+					<option value="2"{if $gender == 2} selected{/if}>Female</option>
+					<option value="3"{if $gender == 3} selected{/if}>Other</option>
+				</select>
 			</div>
 		</form>
 	</div>

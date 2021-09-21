@@ -53,6 +53,7 @@ CREATE TABLE tournament_person (
     firstname VARCHAR(128) NOT NULL,
     name      VARCHAR(64)  NOT NULL,
     birthday  DATE         NOT NULL,
+    gender    BIT(4)       NOT NULL,
 
     PRIMARY KEY (id)
 );

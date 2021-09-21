@@ -27,7 +27,7 @@
 	RewriteRule ^admin/dashboard/?$ index.php?type=admin&action=dashboard [L]
 
 	# Tournament
-	RewriteRule ^(\w+)/?$ index.php?type=tournament&id=$1 [L]
+	RewriteRule ^(tournament/)?(\w+)/?$ index.php?type=tournament&id=$1 [L]
 
 	# Other
 	RewriteRule ^(.*)$ index.php?type=none&page=$1 [L]

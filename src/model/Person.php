@@ -9,12 +9,14 @@ class Person {
 	private string $firstname;
 	private string $name;
 	private DateTime $birthday;
+	private int $gender;
 	
-	public function __construct(int $id, string $firstname, string $name, DateTime $birthday) {
+	public function __construct(int $id, string $firstname, string $name, DateTime $birthday, int $gender) {
 		$this->id = $id;
 		$this->firstname = $firstname;
 		$this->name = $name;
 		$this->birthday = $birthday;
+		$this->gender = $gender;
 	}
 	
 	public function getId(): int {
@@ -31,6 +33,10 @@ class Person {
 	
 	public function getBirthday(): DateTime {
 		return $this->birthday;
+	}
+	
+	public function getGender(): int {
+		return $this->gender;
 	}
 	
 	public function getDisplayName(): string {

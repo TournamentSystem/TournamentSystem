@@ -22,7 +22,8 @@ class CoachController extends Controller {
 					$coach['id'],
 					$coach['firstname'],
 					$coach['name'],
-					new DateTime($coach['birthday'])
+					new DateTime($coach['birthday']),
+					$coach['gender']
 				);
 				
 				parent::render(new CoachView($coach));

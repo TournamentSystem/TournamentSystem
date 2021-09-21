@@ -22,7 +22,8 @@ class PlayerController extends Controller {
 					$player['id'],
 					$player['firstname'],
 					$player['name'],
-					new DateTime($player['birthday'])
+					new DateTime($player['birthday']),
+					$player['gender']
 				);
 				
 				parent::render(new PlayerView($player));

@@ -1,6 +1,16 @@
 .navbar .navbar-text {
   color: var(--bs-light) !important; }
 
+form input, form select {
+  border: none;
+  border-bottom: thin solid var(--bs-gray-700);
+  outline: none;
+  background: none; }
+  form input:disabled, form select:disabled {
+    border-bottom-color: var(--bs-gray-500); }
+  form input:focus, form select:focus {
+    border-bottom-color: var(--bs-primary); }
+
 .card-title {
   margin-top: 0;
   font-weight: 500;
@@ -11,19 +21,7 @@
   margin-bottom: .5rem !important;
   color: var(--bs-gray-700); }
 
-#tournament_list .card {
+#tournament_list .card, #player .card, #coach .card, #admin_login .card {
   width: 75%; }
-
-#player .card, #coach .card, #admin_login .card {
-  width: 75%; }
-  #player .card .card-body form input, #coach .card .card-body form input, #admin_login .card .card-body form input {
-    border: none;
-    border-bottom: thin solid var(--bs-gray-700);
-    outline: none;
-    background: none; }
-    #player .card .card-body form input:disabled, #coach .card .card-body form input:disabled, #admin_login .card .card-body form input:disabled {
-      border-bottom-color: var(--bs-gray-500); }
-    #player .card .card-body form input:focus, #coach .card .card-body form input:focus, #admin_login .card .card-body form input:focus {
-      border-bottom-color: var(--bs-primary); }
 
 /*# sourceMappingURL=tournament_system.css.map */
