@@ -5,7 +5,7 @@
 	<ul class="pagination justify-content-end">
 		{foreach array_slice($years, 0, $MAX_ITEMS) as $y}
 			<li class="page-item{if $y == $year} active{/if}">
-				<form id="year-{$y}" method="post">
+				<form id="year-{$y}" method="post" hidden>
 					<input type="hidden" name="year" value="{$y}"/>
 				</form>
 				<button class="page-link" form="year-{$y}">{$y}</button>
@@ -20,7 +20,7 @@
 				<ul class="dropdown-menu" aria-labelledby="dropdown-more_years">
 					{foreach array_slice($years, $MAX_ITEMS) as $y}
 						<li>
-							<form id="year-{$y}" method="post">
+							<form id="year-{$y}" method="post" hidden>
 								<input type="hidden" name="year" value="{$y}"/>
 							</form>
 							<button class="btn-link dropdown-item{if $y == $year} active{/if}"
