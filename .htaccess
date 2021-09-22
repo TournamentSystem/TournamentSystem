@@ -2,6 +2,7 @@
 	Header set Content-Security-Policy "default-src 'self'; \
 										script-src  'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/; \
 										style-src   'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/;"
+	Header set Referrer-Policy "origin-when-cross-origin, strict-origin-when-cross-origin"
 </IfModule>
 
 <IfModule mod_rewrite.c>
