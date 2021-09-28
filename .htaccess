@@ -31,6 +31,7 @@
 
 	# Admin
 	RewriteRule ^(admin/)?login/?$ index.php?type=admin&action=login [L]
+	RewriteRule ^(admin/)?logout/?$ index.php?type=admin&action=logout [L]
 	RewriteRule ^admin/dashboard/?$ index.php?type=admin&action=dashboard [L]
 
 	# Tournament
