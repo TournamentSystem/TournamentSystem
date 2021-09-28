@@ -19,6 +19,7 @@ use TournamentSystem\Controller\Controller;
 use TournamentSystem\Controller\PlayerController;
 use TournamentSystem\Controller\TournamentController;
 use TournamentSystem\Controller\TournamentListController;
+use TournamentSystem\View\DebugView;
 use TournamentSystem\View\View;
 
 class TournamentSystem {
@@ -83,7 +84,7 @@ class TournamentSystem {
 		if($controller) {
 			$controller->handleRequest();
 		}else {
-			$page = new \TournamentSystem\View\DebugView();
+			$page = new DebugView();
 			$page->render();
 		}
 	}
