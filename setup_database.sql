@@ -38,11 +38,12 @@ CREATE TABLE tournament_user (
 );
 
 CREATE TABLE tournament_tournament (
-    id    INT UNSIGNED NOT NULL,
-    name  VARCHAR(64)  NOT NULL,
-    start DATETIME     NOT NULL,
-    end   DATETIME     NOT NULL,
-    owner VARCHAR(32)  NOT NULL,
+    id          INT UNSIGNED NOT NULL,
+    name        VARCHAR(64)  NOT NULL,
+    description VARCHAR(256),
+    start       DATETIME     NOT NULL,
+    end         DATETIME     NOT NULL,
+    owner       VARCHAR(32)  NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (owner) REFERENCES tournament_user (name)

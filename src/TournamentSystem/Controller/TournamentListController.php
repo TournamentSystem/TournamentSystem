@@ -22,6 +22,7 @@ class TournamentListController extends Controller {
 				array_push($tournaments, new Tournament(
 					$tournament['id'],
 					$tournament['name'],
+					$tournament['description'],
 					new DateTime($tournament['start']),
 					new DateTime($tournament['end']),
 					$tournament['owner']

@@ -38,7 +38,7 @@
 		<div class="card-body">
 			<a href="{$tournament->getId()}/" class="card-title">{$tournament->getName()}</a>
 			<p class="card-subtitle">{$tournament->getStart()|datetime} - {$tournament->getEnd()|datetime}</p>
-			<p class="card-text">Hello World!</p>
+			<p class="card-text">{$tournament->getDescription()}</p>
 		</div>
 	</div>
 {/foreach}
