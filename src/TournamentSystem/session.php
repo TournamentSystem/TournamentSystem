@@ -6,7 +6,7 @@ session_set_cookie_params([
 ]);
 
 function session_exists(): bool {
-	return isset($_COOKIE[session_name()]) && session_start() && isset($_SESSION['user']);
+	return isset($_COOKIE[session_name()]) && session_start() && session_status() === PHP_SESSION_ACTIVE && isset($_SESSION['user']);
 }
 
 function session_stop(): void {
