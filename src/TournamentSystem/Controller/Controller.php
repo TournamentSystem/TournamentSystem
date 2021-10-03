@@ -66,9 +66,26 @@ abstract class Controller {
 		http_response_code($this->$methodFunc());
 	}
 	
-	protected final function SEE_OTHER(string $loc): int {
+	private final function setHeader_Location(string $loc): void {
 		header("Location: $loc");
+	}
+	
+	protected final function SEE_OTHER(string $loc): int {
+		$this->setHeader_Location($loc);
+		
 		return self::SEE_OTHER;
+	}
+	
+	protected final function TEMPORARY_REDIRECT(string $loc): int {
+		$this->setHeader_Location($loc);
+		
+		return self::TEMPORARY_REDIRECT;
+	}
+	
+	protected final function PERMANENT_REDIRECT(string $loc): int {
+		$this->setHeader_Location($loc);
+		
+		return self::PERMANENT_REDIRECT;
 	}
 	
 	protected final function UNAUTHORIZED(): int {
