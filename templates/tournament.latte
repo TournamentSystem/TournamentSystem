@@ -1,1 +1,41 @@
+{var int $labelCol = 2}
+{var int $col = 6}
 
+<div class="card w-md-75 mx-auto">
+	<div class="card-body">
+		<p class="card-title">{$tournament->getName()}</p>
+		<form class="card-text" autocomplete="off">
+			<div class="form-group form-row">
+				<label class="col-{$labelCol} col-form-label" for="name">Name</label>
+				<input id="name" class="col-{$col}" type="text" name="name" value="{$tournament->getName()}" disabled/>
+			</div>
+			<div class="form-group form-row">
+				<label class="col-{$labelCol} col-form-label" for="description">Description</label>
+				<input id="description" class="col-{$col}" type="text" name="description"
+					   value="{$tournament->getDescription()}" disabled/>
+			</div>
+			<fieldset id="start" class="form-group form-row" name="start">
+				<label class="col-{$labelCol} col-form-label" for="start">Start</label>
+
+				<label for="start_date" hidden>Start Date</label>
+				<input id="start_date" class="col-{$col / 2}" type="date" name="start_date"
+					   value="{$tournament->getStart()|date:Y-m-d}" disabled/>
+
+				<label for="start_time" hidden>Start Time</label>
+				<input id="start_time" class="col-{$col / 2}" type="time" name="start_time"
+					   value="{$tournament->getStart()|time:'H:i:s'}" disabled/>
+			</fieldset>
+			<fieldset id="end" class="form-group form-row" name="end">
+				<label class="col-{$labelCol} col-form-label" for="end">End</label>
+
+				<label for="end_date" hidden>End Date</label>
+				<input id="end_date" class="col-{$col / 2}" type="date" name="end_date"
+					   value="{$tournament->getEnd()|date:Y-m-d}" disabled/>
+
+				<label for="end_time" hidden>End Time</label>
+				<input id="end_time" class="col-{$col / 2}" type="time" name="end_time"
+					   value="{$tournament->getEnd()|time:'H:i:s'}" disabled/>
+			</fieldset>
+		</form>
+	</div>
+</div>

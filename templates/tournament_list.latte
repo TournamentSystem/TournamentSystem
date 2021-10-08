@@ -34,7 +34,7 @@
 </nav>
 
 {foreach $tournaments[$year] as $tournament}
-	<div class="card mx-auto my-2">
+	<div class="card w-md-75 mx-auto my-2">
 		<div class="card-body">
 			<a href="{$tournament->getId()}/" class="card-title">{$tournament->getName()}</a>
 			<p class="card-subtitle">{$tournament->getStart()|datetime} - {$tournament->getEnd()|datetime}</p>

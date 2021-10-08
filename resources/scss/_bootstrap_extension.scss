@@ -1,0 +1,17 @@
+@import "../../vendor/twbs/bootstrap/scss/functions";
+@import "../../vendor/twbs/bootstrap/scss/variables";
+@import "../../vendor/twbs/bootstrap/scss/mixins";
+@import "../../vendor/twbs/bootstrap/scss/utilities";
+
+
+$sizes: map-deep-get($utilities, "width", "values");
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		@each $size, $length in $sizes {
+			.w-#{$breakpoint}-#{$size} {
+				width: $length;
+			}
+		}
+	}
+}
