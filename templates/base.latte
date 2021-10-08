@@ -13,9 +13,8 @@
 
 	<!-- TournamentSystem -->
 	<link rel="stylesheet" href="/resources/css/tournament_system.min.css" integrity="" crossorigin="anonymous"/>
-	{if $_SERVER['REQUEST_METHOD'] == 'POST'}
-		<script src="/resources/js/post-method-replace-state.js" integrity="" crossorigin="anonymous"></script>
-	{/if}
+	<script src="/resources/js/post-method-replace-state.js" integrity="" crossorigin="anonymous"
+			n:if="$_SERVER['REQUEST_METHOD'] == 'POST'"></script>
 
 	{$head}
 </head>
@@ -24,6 +23,7 @@
 		<div class="container-xxl">
 			<a href="/" class="navbar-brand py-1">{$logo|noescape}</a>
 			<span class="navbar-text mx-auto my-1 fs-4 text-light">{$title}</span>
+			<div class="invisible py-1">{$logo|noescape}</div>
 		</div>
 	</header>
 	<main id="{$type}" class="container-lg py-4">
