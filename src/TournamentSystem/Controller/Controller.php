@@ -66,7 +66,7 @@ abstract class Controller {
 		http_response_code($this->$methodFunc());
 	}
 	
-	private final function setHeader_Location(string $loc): void {
+	private function setHeader_Location(string $loc): void {
 		header("Location: $loc");
 	}
 	

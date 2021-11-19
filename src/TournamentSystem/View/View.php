@@ -27,10 +27,7 @@ abstract class View {
 		]);
 	}
 	
-	/**
-	 * @param object|array $params
-	 */
-	protected final function template(string $name, $params = []): string {
+	protected final function template(string $name, object|array $params = []): string {
 		return self::$latte->renderToString("templates/$name", $params);
 	}
 	

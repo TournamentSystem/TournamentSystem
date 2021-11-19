@@ -4,26 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3f4d4c40446db077f38098deceafe0b",
+    "content-hash": "2a156cafefb7f687183f26db8d908aec",
     "packages": [
         {
             "name": "latte/latte",
-            "version": "v2.10.3",
+            "version": "v2.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "dd2c58863e830c22a2c6b85af63f37b829d255df"
+                "reference": "0138a26efe7a2a448769f6ba490bfaae8fe7ab50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/dd2c58863e830c22a2c6b85af63f37b829d255df",
-                "reference": "dd2c58863e830c22a2c6b85af63f37b829d255df",
+                "url": "https://api.github.com/repos/nette/latte/zipball/0138a26efe7a2a448769f6ba490bfaae8fe7ab50",
+                "reference": "0138a26efe7a2a448769f6ba490bfaae8fe7ab50",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": ">=7.1 <8.1"
+                "php": ">=7.1 <8.2"
             },
             "conflict": {
                 "nette/application": "<2.4.1"
@@ -42,6 +42,9 @@
                 "nette/php-generator": "to use tag {templatePrint}",
                 "nette/utils": "to use filter |webalize"
             },
+            "bin": [
+                "bin/latte-lint"
+            ],
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -83,22 +86,22 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v2.10.3"
+                "source": "https://github.com/nette/latte/tree/v2.10.5"
             },
-            "time": "2021-02-22T11:17:13+00:00"
+            "time": "2021-10-26T17:36:38+00:00"
         },
         {
             "name": "twbs/bootstrap",
-            "version": "v5.1.1",
+            "version": "v5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "0d81d3cbc14dfcdca8a868e3f25189a4f1ab273c"
+                "reference": "1a6fdfae6be09b09eaced8f0e442ca6f7680a61e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0d81d3cbc14dfcdca8a868e3f25189a4f1ab273c",
-                "reference": "0d81d3cbc14dfcdca8a868e3f25189a4f1ab273c",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/1a6fdfae6be09b09eaced8f0e442ca6f7680a61e",
+                "reference": "1a6fdfae6be09b09eaced8f0e442ca6f7680a61e",
                 "shasum": ""
             },
             "replace": {
@@ -133,9 +136,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twbs/bootstrap/issues",
-                "source": "https://github.com/twbs/bootstrap/tree/v5.1.1"
+                "source": "https://github.com/twbs/bootstrap/tree/v5.1.3"
             },
-            "time": "2021-09-07T15:37:44+00:00"
+            "time": "2021-10-09T06:43:19+00:00"
         }
     ],
     "packages-dev": [],
@@ -145,7 +148,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4",
+        "php": "^8",
         "ext-mysqli": "*"
     },
     "platform-dev": [],
