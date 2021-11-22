@@ -23,26 +23,9 @@
 	RewriteRule ^admin/update/?$ index.php?type=admin&action=update [L]
 
 	#
+	# Modules
 	#
-	#
-
-	# Player
-	RewriteRule ^player/(\d+)/?$ index.php?type=player&id=$1 [L]
-
-	# Coach
-	RewriteRule ^coach/(\d+)/?$ index.php?type=coach&id=$1 [L]
-
-	# Club
-	RewriteRule ^club/(\d+)/?$ index.php?type=club&id=$1 [L]
-	# Club Player
-	RewriteRule ^club/(\d+)/player/(\d+)/?$ index.php?type=player&id=$2&club=$1 [L]
-	# Team
-	RewriteRule ^club/(\d+)/(?:team/)?(\d+)/?$ index.php?type=team&id=$2&club=$1 [L]
-	# Team Player
-	RewriteRule ^club/(\d+)/(?:team/)?(\d+)/(?:player/)?(\d+)/?$ index.php?type=player&id=$3&team=$2&club=$1 [L]
-
-	# Tournament
-	RewriteRule ^(?:tournament/)?(\w+)/?$ index.php?type=tournament&id=$1 [L]
+	RewriteRule ^(.+)/(.*)/?$ index.php?type=$1&page=$2 [L]
 
 	#
 	# Other
