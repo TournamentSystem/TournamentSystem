@@ -8,14 +8,12 @@
 		}
 	],
 	"require": {
-		"php": "^8",
-		"ext-mysqli": "*",
-		"latte/latte": "^2.10",
-		"twbs/bootstrap": "^5.1"
+		"neo-hornberger/tournament_system-core": "dev-master"
 	},
-	"autoload": {
-		"classmap": [
-			"src/"
-		]
-	}
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "../TournamentSystem-Core/"
+		}
+	]
 }
