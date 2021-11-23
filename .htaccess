@@ -17,18 +17,19 @@
 	#
 	# Admin
 	#
-	RewriteRule ^(admin/)?login/?$ index.php?type=admin&action=login [L]
-	RewriteRule ^(admin/)?logout/?$ index.php?type=admin&action=logout [L]
-	RewriteRule ^admin/dashboard/?$ index.php?type=admin&action=dashboard [L]
-	RewriteRule ^admin/update/?$ index.php?type=admin&action=update [L]
+	RewriteRule ^(admin/)?login/?$ index.php?module=admin&action=login [L]
+	RewriteRule ^(admin/)?logout/?$ index.php?module=admin&action=logout [L]
+	RewriteRule ^admin/dashboard/?$ index.php?module=admin&action=dashboard [L]
+	RewriteRule ^admin/update/?$ index.php?module=admin&action=update [L]
+	RewriteRule ^admin/(.*)/?$ index.php?module=admin&action=none&page=$1 [L]
 
 	#
 	# Modules
 	#
-	RewriteRule ^(.+)/(.*)/?$ index.php?type=$1&page=$2 [L]
+	RewriteRule ^(.+)/(.*)/?$ index.php?module=$1&page=$2 [L]
 
 	#
 	# Other
 	#
-	RewriteRule ^(.*)$ index.php?type=none&page=$1 [L]
+	RewriteRule ^(.*)$ index.php?module=none&page=$1 [L]
 </IfModule>
