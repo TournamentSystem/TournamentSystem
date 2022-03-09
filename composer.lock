@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b696392a491f4723c86a6749ad79b0f2",
+    "content-hash": "4dba99b124d0b20a1962168e5caba6b0",
     "packages": [
         {
             "name": "latte/latte",
-            "version": "v2.10.5",
+            "version": "v2.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "0138a26efe7a2a448769f6ba490bfaae8fe7ab50"
+                "reference": "8a9bd8af76557fc35abae639ab7b966af706fec9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/0138a26efe7a2a448769f6ba490bfaae8fe7ab50",
-                "reference": "0138a26efe7a2a448769f6ba490bfaae8fe7ab50",
+                "url": "https://api.github.com/repos/nette/latte/zipball/8a9bd8af76557fc35abae639ab7b966af706fec9",
+                "reference": "8a9bd8af76557fc35abae639ab7b966af706fec9",
                 "shasum": ""
             },
             "require": {
@@ -86,17 +86,17 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v2.10.5"
+                "source": "https://github.com/nette/latte/tree/v2.10.6"
             },
-            "time": "2021-10-26T17:36:38+00:00"
+            "time": "2021-11-26T22:56:21+00:00"
         },
         {
             "name": "neo-hornberger/tournament_system-core",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "../TournamentSystem-Core/",
-                "reference": "1a4540580e25d8a99d620374d939d52123f8c2db"
+            "dist": {
+                "type": "path",
+                "url": "../TournamentSystem-Core",
+                "reference": "f1a4d454f225378209a54c3afb854675c947ea20"
             },
             "require": {
                 "ext-mysqli": "*",
@@ -104,7 +104,6 @@
                 "php": "^8",
                 "twbs/bootstrap": "^5.1"
             },
-            "default-branch": true,
             "type": "project",
             "autoload": {
                 "classmap": [
@@ -117,7 +116,10 @@
                     "email": "neo.hornberger@gmx.de"
                 }
             ],
-            "time": "2021-11-23T12:13:09+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "twbs/bootstrap",

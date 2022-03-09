@@ -12,8 +12,11 @@
 	},
 	"repositories": [
 		{
-			"type": "vcs",
-			"url": "../TournamentSystem-Core/"
+			"type": "path",
+			"url": "../TournamentSystem-Core/",
+			"options": {
+				"symlink": false
+			}
 		}
 	]
 }
