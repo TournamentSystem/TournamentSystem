@@ -21,6 +21,8 @@
 	RewriteRule ^(admin/)?logout/?$ index.php?module=admin&action=logout [L]
 	RewriteRule ^admin/dashboard/?$ index.php?module=admin&action=dashboard [L]
 	RewriteRule ^admin/update/?$ index.php?module=admin&action=update [L]
+	RewriteRule ^admin/modules/?$ index.php?module=admin&action=modules [L]
+	RewriteRule ^admin/install/?$ index.php?module=admin&action=install [L]
 	RewriteRule ^admin/(.*)/?$ index.php?module=admin&action=none&page=$1 [L]
 
 	#
