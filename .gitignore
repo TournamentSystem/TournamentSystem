@@ -1,7 +1,9 @@
 .idea/
 
 /vendor/
+composer.lock
 
 config.ini
 database_user.txt
 test_database.sql
+
