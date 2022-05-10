@@ -18,21 +18,18 @@
 	#
 	# Admin
 	#
-	RewriteRule ^(admin/)?login/?$ index.php?module=admin&action=login [L]
-	RewriteRule ^(admin/)?logout/?$ index.php?module=admin&action=logout [L]
-	RewriteRule ^admin/dashboard/?$ index.php?module=admin&action=dashboard [L]
-	RewriteRule ^admin/update/?$ index.php?module=admin&action=update [L]
-	RewriteRule ^admin/modules/?$ index.php?module=admin&action=modules [L]
-	RewriteRule ^admin/install/?$ index.php?module=admin&action=install [L]
-	RewriteRule ^admin/(.*)/?$ index.php?module=admin&action=none&page=$1 [L]
+	RewriteRule ^(admin/)?login/?$ index.php?_module=admin&_action=login [L]
+	RewriteRule ^(admin/)?logout/?$ index.php?_module=admin&_action=logout [L]
+	RewriteRule ^admin/([^/]*)/?$ index.php?_module=admin&_action=$1 [L]
 
 	#
 	# Modules
 	#
-	RewriteRule ^(.+)/(.*)/?$ index.php?module=$1&page=$2 [L]
+	RewriteRule ^([^/]+)/?$ index.php?_module=$1 [L]
+	RewriteRule ^([^/]+)/(.*?)/?$ index.php?_module=$1&_page=$2 [L]
 
 	#
 	# Other
 	#
-	RewriteRule ^(.*)$ index.php?module=none&page=$1 [L]
+	RewriteRule ^(.*)$ index.php?_module=none&_page=$1 [L]
 </IfModule>
