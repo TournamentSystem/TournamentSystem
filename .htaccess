@@ -1,7 +1,8 @@
 <IfModule mod_headers.c>
 	Header set Content-Security-Policy "default-src 'self'; \
-										script-src  'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/; \
-										style-src   'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/;"
+										script-src  'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/ https://cdn.jsdelivr.net/npm/jquery@3.6.0/; \
+										style-src   'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/; \
+										img-src     'self' data:;"
 	Header set Referrer-Policy "origin-when-cross-origin, strict-origin-when-cross-origin"
 </IfModule>
 
