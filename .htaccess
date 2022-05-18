@@ -1,35 +1,34 @@
-<IfModule mod_headers.c>
-	Header set Content-Security-Policy "default-src 'self'; \
-										script-src  'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/ https://cdn.jsdelivr.net/npm/jquery@3.6.0/; \
-										style-src   'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/; \
-										img-src     'self' data:;"
-	Header set Referrer-Policy "origin-when-cross-origin, strict-origin-when-cross-origin"
-</IfModule>
+## mod_headers.c
+Header set Content-Security-Policy "default-src 'self'; \
+                                    script-src  'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/ https://cdn.jsdelivr.net/npm/jquery@3.6.0/; \
+                                    style-src   'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/; \
+                                    img-src     'self' data:;"
+Header set Referrer-Policy "origin-when-cross-origin, strict-origin-when-cross-origin"
 
-<IfModule mod_rewrite.c>
-	RewriteEngine On
 
-	RewriteCond %{REQUEST_URI} ^/$             [OR]
-	RewriteCond %{REQUEST_URI} ^/index\.php$   [OR]
-	RewriteCond %{REQUEST_URI} ^/resources     [OR]
-	RewriteCond %{REQUEST_URI} ^/favicon\.ico$
-	RewriteRule ^ - [L]
+## mod_rewrite.c
+RewriteEngine On
 
-	#
-	# Admin
-	#
-	RewriteRule ^(admin/)?login/?$ index.php?_module=admin&_action=login [L]
-	RewriteRule ^(admin/)?logout/?$ index.php?_module=admin&_action=logout [L]
-	RewriteRule ^admin/([^/]*)/?$ index.php?_module=admin&_action=$1 [L]
+RewriteCond %{REQUEST_URI} ^/$             [OR]
+RewriteCond %{REQUEST_URI} ^/index\.php$   [OR]
+RewriteCond %{REQUEST_URI} ^/resources     [OR]
+RewriteCond %{REQUEST_URI} ^/favicon\.ico$
+RewriteRule ^ - [L]
 
-	#
-	# Modules
-	#
-	RewriteRule ^([^/]+)/?$ index.php?_module=$1 [L]
-	RewriteRule ^([^/]+)/(.*?)/?$ index.php?_module=$1&_page=$2 [L]
+#
+# Admin
+#
+RewriteRule ^(admin/)?login/?$ index.php?_module=admin&_action=login [L]
+RewriteRule ^(admin/)?logout/?$ index.php?_module=admin&_action=logout [L]
+RewriteRule ^admin/([^/]*)/?$ index.php?_module=admin&_action=$1 [L]
 
-	#
-	# Other
-	#
-	RewriteRule ^(.*)$ index.php?_module=none&_page=$1 [L]
-</IfModule>
+#
+# Modules
+#
+RewriteRule ^([^/]+)/?$ index.php?_module=$1 [L]
+RewriteRule ^([^/]+)/(.*?)/?$ index.php?_module=$1&_page=$2 [L]
+
+#
+# Other
+#
+RewriteRule ^(.*)$ index.php?_module=none&_page=$1 [L]
