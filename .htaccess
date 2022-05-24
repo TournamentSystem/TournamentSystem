@@ -6,6 +6,11 @@ Header set Content-Security-Policy "default-src 'self'; \
 Header set Referrer-Policy "origin-when-cross-origin, strict-origin-when-cross-origin"
 
 
+php_value xdebug.var_display_max_depth 10
+php_value xdebug.var_display_max_children 256
+php_value xdebug.var_display_max_data 1024
+
+
 ## mod_rewrite.c
 RewriteEngine On
 
