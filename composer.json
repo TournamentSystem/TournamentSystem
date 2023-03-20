@@ -10,6 +10,11 @@
 	"require": {
 		"neo-hornberger/tournament_system-core": "dev-master"
 	},
+	"autoload": {
+		"classmap": [
+			".ts_install/"
+		]
+	},
 	"repositories": [
 		{
 			"type": "path",
@@ -18,5 +23,8 @@
 				"symlink": false
 			}
 		}
-	]
+	],
+	"scripts": {
+		"post-update-cmd": "TournamentSystem\\Installer::postUpdate"
+	}
 }
