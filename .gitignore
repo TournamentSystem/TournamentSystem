@@ -3,6 +3,10 @@
 /vendor/
 composer.lock
 
+/config/
+/resources/
+/templates/
+
 config.ini
 database_user.txt
 test_database.sql

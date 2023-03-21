@@ -347,8 +347,8 @@ EOT;
 	 * @param array<string, mixed> $config
 	 * @return callable(IOInterface, string, string): void
 	 */
-	private static function askConfig(array $config): callable {
-		return function(IOInterface $IO, string $key, string $question) use ($config) {
+	private static function askConfig(array &$config): callable {
+		return function(IOInterface $IO, string $key, string $question) use (&$config) {
 			$default = $config[$key] ?? null;
 			
 			if($default !== null) {
