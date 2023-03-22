@@ -14,10 +14,10 @@ class Data {
 	 * @var string[]
 	 */
 	public readonly array $files;
-	
+
 	public function __construct(PackageInterface $package) {
 		$data = $package->getExtra()['tournament_system'] ?? [];
-		
+
 		$this->type = $data['type'] ?? '';
 		$this->class = $data['class'] ?? null;
 		$this->files = $data['files'] ?? [];
